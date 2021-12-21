@@ -29,3 +29,12 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+.contact-image {
+  margin-left : auto;
+  margin-right : auto;
+}
+
+</style>
