@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500;600&family=Yuji+Hentaigana+Akebono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500;600&family=Ubuntu:wght@500&family=Yuji+Hentaigana+Akebono&display=swap');
 
-#root {
+html {
   background-color: rgb(238, 240, 244);
-  height: 100vh;
-  padding-top: 300px;
+}
+
+.logos {
+  margin-top : 100px;
 }
 
 .logo-container {
@@ -59,3 +61,10 @@
   text-align: center;
 }
 
+.tech-title {
+  font-family: "Ubuntu", sans-serif;
+  font-size : 40px;
+  color : #3A424B;
+  margin-top : 100px;
+  text-align : center;
+}

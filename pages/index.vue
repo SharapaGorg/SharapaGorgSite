@@ -1,16 +1,25 @@
 <template>
-  <div class='grid grid-cols-3 grid-rows-2 justify-items-center'>
-    <tech-logo logo-path="Nuxt_logo.svg" logo-title="Nuxt.js" href = 'https://nuxtjs.org/'/>
+  <div class='grid lg:grid-cols-3 lg:grid-rows-4 justify-items-center gap-4 logos'>
 
-    <div style='height : 300px;' ref="SharapaLogo">
+    <span class = 'tech-title lg:col-start-1'>Frontend-technologies</span>
+    <span class = 'tech-title lg:col-start-3'>Backend-technologies</span>
+
+    <div class = 'lg:col-start-2 row-start-1' style='height : 300px;' ref="SharapaLogo">
       <div class='main-logo'>
       </div>
       <span class='logo-text'>SG</span>
     </div>
+    <div class = 'lg:col-start-1'>
+      <tech-logo logo-path="Nuxt_logo.svg" logo-title="Nuxt.js" href='https://nuxtjs.org/'/>
+    </div>
 
-    <tech-logo logo-path="Flask_logo.svg" logo-title="Flask"/>
-    <tech-logo logo-path="Vue_logo.svg" logo-title="Vue.js"/>
-    <tech-logo class = 'col-start-3' logo-path="Python_logo.svg" logo-title="Python"/>
+    <div class = 'lg:col-start-3'>
+      <tech-logo logo-path="Flask_logo.svg" logo-title="Flask" href='https://flask.palletsprojects.com/en/2.0.x/'/>
+    </div>
+    <tech-logo logo-path="Vue_logo.svg" logo-title="Vue.js" href='https://vuejs.org/'/>
+    <tech-logo class='lg:col-start-3' logo-path="Python_logo.svg" logo-title="Python" href='https://www.python.org/'/>
+
+    <tech-logo logo-path="Tailwind_logo.svg" logo-title="TailwindCSS" href="https://tailwindcss.com/"></tech-logo>
   </div>
 </template>
 
@@ -43,7 +52,7 @@ export default {
       this.navigatorActivated = !this.navigatorActivated;
 
       setTimeout(() => {
-          navigatorItem.style.opacity = this.navigatorActivated ? '1' : '0'
+        navigatorItem.style.opacity = this.navigatorActivated ? '1' : '0'
       }, 400)
     })
   }
