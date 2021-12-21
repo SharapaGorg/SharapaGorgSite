@@ -1,7 +1,7 @@
 <template>
     <div class = 'logo-container' ref = 'logo'>
       <img :src="resolve_img_url(logoPath)" class = 'small-logo'/>
-      <div class = 'tech-title'>{{ logoTitle }}</div>
+      <div class = 'tech-title_'>{{ logoTitle }}</div>
     </div>
 </template>
 
@@ -27,9 +27,7 @@ export default {
 
 <style scoped>
 
-.tech-title {
-  position : relative;
-  bottom : 105px;
+.tech-title_ {
   text-align : center;
   height : 75px;
   width : 250px;
@@ -41,7 +39,7 @@ export default {
   color :  rgb(238, 240, 244);
 }
 
-.logo-container:hover .tech-title {
+.logo-container:hover .tech-title_ {
   opacity : 1;
   transition : all .5s linear;
 
