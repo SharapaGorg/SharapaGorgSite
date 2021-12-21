@@ -62,9 +62,15 @@ html {
 }
 
 .tech-title {
+  display: block;
   font-family: "Ubuntu", sans-serif;
   font-size : 40px;
   color : #3A424B;
-  margin-top : 100px;
   text-align : center;
+  margin-top : 100px;
+  border-radius: 20px;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  @apply px-4 py-2;
 }
+
+

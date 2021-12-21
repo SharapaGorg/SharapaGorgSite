@@ -28,6 +28,8 @@ export default {
 <style scoped>
 
 .tech-title {
+  position : relative;
+  bottom : 105px;
   text-align : center;
   height : 75px;
   width : 250px;

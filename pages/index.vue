@@ -1,8 +1,12 @@
 <template>
   <div class='grid lg:grid-cols-3 lg:grid-rows-4 justify-items-center gap-4 logos'>
 
-    <span class = 'tech-title lg:col-start-1'>Frontend-technologies</span>
-    <span class = 'tech-title lg:col-start-3'>Backend-technologies</span>
+    <div class = 'lg:col-start-1'>
+      <span class = 'tech-title'>Frontend-technologies</span>
+    </div>
+    <div class = 'lg:col-start-3'>
+      <span class = 'tech-title'>Backend-technologies</span>
+    </div>
 
     <div class = 'lg:col-start-2 row-start-1' style='height : 300px;' ref="SharapaLogo">
       <div class='main-logo'>
