@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500;600&family=Yuji+Hentaigana+Akebono&display=swap');
+
+#root {
+  background-color: rgb(238, 240, 244);
+  height: 100vh;
+  padding-top: 300px;
+}
+
+.logo-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;
+}
+
+.small-logo {
+  margin-top: 62px;
+  height: 128px;
+  width: 128px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-logo {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  /*box-shadow: rgb(212, 214, 217) 7px 7px 14px inset, rgb(255, 255, 255) -7px -7px 14px inset;*/
+}
+
+.navigator-item {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(238, 240, 244);
+  border-radius: 50%;
+  transition: all .75s linear;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+}
+
+.logo-text {
+  position: relative;
+  bottom: 205px;
+  display: block;
+  font-size: 120px;
+  width: 256px;
+  font-family: 'Comfortaa', cursive;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
