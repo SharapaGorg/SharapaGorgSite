@@ -73,7 +73,6 @@ html {
   margin-top : 100px;
   border-radius: 20px;
   /*box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;*/
-  background: linear-gradient(145deg, #FFFFFF, #C1C3C6);
-  box-shadow: 19.82px 19.82px 71px #B7B9BC, -19.82px -19.82px 71px #FFFFFF;
+  box-shadow: inset 16.82px 16.82px 28px #D9DADE, inset -16.82px -16.82px 28px #FFFFFF;
   @apply px-4 py-2;
 }
