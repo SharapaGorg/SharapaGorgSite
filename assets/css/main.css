@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500;600&family=Yuji+Hentaigana+Akebono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500;600&family=Ubuntu:wght@500&family=Yuji+Hentaigana+Akebono&display=swap');
 
 #root {
   background-color: rgb(238, 240, 244);
@@ -7,9 +8,11 @@
 }
 
 .logo-container {
+  cursor: pointer;
   width: 250px;
   height: 250px;
   border-radius: 100%;
+  overflow : hidden;
   box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;
 }
 
@@ -55,3 +58,4 @@
   margin-right: auto;
   text-align: center;
 }
+

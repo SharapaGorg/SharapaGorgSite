@@ -1,6 +1,6 @@
 <template>
   <div class='grid grid-cols-3 grid-rows-2 justify-items-center'>
-    <tech-logo logo-path="Nuxt_logo.svg"/>
+    <tech-logo logo-path="Nuxt_logo.svg" logo-title="Nuxt.js" href = 'https://nuxtjs.org/'/>
 
     <div style='height : 300px;' ref="SharapaLogo">
       <div class='main-logo'>
@@ -8,9 +8,9 @@
       <span class='logo-text'>SG</span>
     </div>
 
-    <tech-logo logo-path="Flask_logo.svg"/>
-    <tech-logo logo-path="Vue_logo.svg"/>
-    <tech-logo class = 'col-start-3' logo-path="Python_logo.svg"/>
+    <tech-logo logo-path="Flask_logo.svg" logo-title="Flask"/>
+    <tech-logo logo-path="Vue_logo.svg" logo-title="Vue.js"/>
+    <tech-logo class = 'col-start-3' logo-path="Python_logo.svg" logo-title="Python"/>
   </div>
 </template>
 
