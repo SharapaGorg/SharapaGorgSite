@@ -1,5 +1,5 @@
 <template>
-  <div class='project-card backdrop-blue-xl' ref='card'>
+  <div class='project-card' ref='card'>
     <div class='project-preview' v-show='showPreview' ref='projectPreview'>
     </div>
     <div class='project-part-1' v-show="!showPreview">
@@ -36,9 +36,6 @@ export default {
   },
   mounted() {
     this.$refs.projectPreview.style.backgroundImage = 'url(' + this.resolve_img_url(this.projectPreview) + ')'
-    for (let tools of this.projectLang) {
-
-    }
 
     this.$refs.card.addEventListener('mouseover', () => {
       this.showPreview = true;
@@ -55,6 +52,7 @@ export default {
 <style scoped>
 
 .project-card {
+  margin-top : 50px;
   width: 300px;
   height: 230px;
   background-color: rgb(238, 240, 244);

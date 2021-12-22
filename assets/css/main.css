@@ -27,6 +27,7 @@ html {
 }
 
 .main-logo {
+  cursor: pointer;
   position: relative;
   width: 256px;
   height: 256px;
@@ -42,17 +43,17 @@ html {
   width: 100px;
   background-color: rgb(238, 240, 244);
   border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
 }
 
-.contacts {
-  opacity : 0;
+.contact {
+  transform: translate(0, 80px);
+  opacity : 1;
   transition: all .5s linear;
 }
 
 .logo-text {
+  cursor : pointer;
   position: relative;
   bottom: 205px;
   display: block;
@@ -72,7 +73,17 @@ html {
   text-align : center;
   margin-top : 100px;
   border-radius: 20px;
-  /*box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;*/
   box-shadow: inset 16.82px 16.82px 28px #D9DADE, inset -16.82px -16.82px 28px #FFFFFF;
   @apply px-4 py-2;
+}
+
+.bio {
+  height : 300px;
+  width : 100%;
+  border-radius: 10px;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+}
+
+.SharapaLogo {
+  height : 300px;
 }
