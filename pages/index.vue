@@ -1,17 +1,10 @@
 <template>
-  <div class='grid lg:grid-cols-4 lg:grid-rows-4 justify-items-center gap-4 logos'>
-
-    <div class='lg:col-start-1 '>
-      <span class='tech-title'>Frontend</span>
-    </div>
+  <div class='grid lg:grid-cols-4 lg:grid-rows-6 justify-items-center logos'>
     <div class="lg:col-start-2 lg:row-start-1 contact" ref="github">
       <contact logo-path="github.svg" href="https://github.com/SharapaGorg"/>
     </div>
     <div class='lg:col-start-3 lg:row-start-1 contact' ref="telegram">
       <contact logo-path="telegram.png" href="https://t.me/sharapagorg"/>
-    </div>
-    <div class='lg:col-start-4 lg:row-start-1'>
-      <span class='tech-title'>Backend</span>
     </div>
 
     <div class='lg:col-start-2 lg:col-end-4 lg:row-start-1 SharapaLogo' ref="SharapaLogo">
@@ -21,10 +14,6 @@
     </div>
     <div class='lg:col-start-2 lg:col-end-4 lg:row-start-2 bio'>
 
-    </div>
-
-    <div class='lg:col-start-1'>
-      <tech-logo logo-path="Nuxt_logo.svg" logo-title="Nuxt.js" href='https://nuxtjs.org/'/>
     </div>
     <div class='lg:col-start-2 lg:row-start-3'>
       <ProjectCard project-title="SharapaGorgSite"
@@ -36,13 +25,22 @@
                    project-img="Spotify_logo.svg"
                    project-preview="Video2.gif"/>
     </div>
-    <div class='lg:col-start-4 lg:row-start-2'>
-      <tech-logo logo-path="Flask_logo.svg" logo-title="Flask" href='https://flask.palletsprojects.com/en/2.0.x/'/>
+    <div class='lg:col-start-2 lg:col-end-4 lg:row-start-4' style='height : 100px;'>
+      <span class='tech-title'>Technologies and tools</span>
+      <div class='line'></div>
     </div>
-    <tech-logo logo-path="Vue_logo.svg" logo-title="Vue.js" href='https://vuejs.org/' class='lg:col-start-1'/>
-    <tech-logo class='lg:col-start-4' logo-path="Python_logo.svg" logo-title="Python" href='https://www.python.org/'/>
 
-    <tech-logo logo-path="Tailwind_logo.svg" logo-title="TailwindCSS" href="https://tailwindcss.com/"></tech-logo>
+    <tech-logo logo-path="Vue_logo.svg" logo-title="Vue.js" href='https://vuejs.org/'
+               class='lg:col-start-2 lg:row-start-6'/>
+    <tech-logo logo-path="Nuxt_logo.svg" logo-title="Nuxt.js" href='https://nuxtjs.org/'
+               class='lg:col-start-2 lg:row-start-5'/>
+    <tech-logo logo-path="Tailwind_logo.svg" logo-title="TailwindCSS" href="https://tailwindcss.com/"
+               class='lg:col-start-2 lg:row-start-7'></tech-logo>
+
+    <tech-logo class='lg:col-start-3 lg:row-start-5' logo-path="Python_logo.svg" logo-title="Python"
+               href='https://www.python.org/'/>
+    <tech-logo logo-path="Flask_logo.svg" logo-title="Flask" href='https://flask.palletsprojects.com/en/2.0.x/'
+               class='lg:col-start-3 lg:row-start-6'/>
   </div>
 </template>
 

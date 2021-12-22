@@ -16,6 +16,7 @@ html {
   border-radius: 100%;
   overflow : hidden;
   box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;
+  @apply relative lg:bottom-2/3;
 }
 
 .small-logo {
@@ -28,7 +29,6 @@ html {
 
 .main-logo {
   cursor: pointer;
-  position: relative;
   width: 256px;
   height: 256px;
   margin-left: auto;
@@ -71,9 +71,9 @@ html {
   font-size : 40px;
   color : #3A424B;
   text-align : center;
-  margin-top : 100px;
+  /*margin-top : 100px;*/
   border-radius: 20px;
-  box-shadow: inset 16.82px 16.82px 28px #D9DADE, inset -16.82px -16.82px 28px #FFFFFF;
+  /*box-shadow: inset 16.82px 16.82px 28px #D9DADE, inset -16.82px -16.82px 28px #FFFFFF;*/
   @apply px-4 py-2;
 }
 
@@ -86,4 +86,12 @@ html {
 
 .SharapaLogo {
   height : 300px;
+}
+
+.line {
+  height : 3px;
+  max-width : 1000px;
+  min-width : 700px;
+  border-radous : 100px;
+  background-color : #3A424B;
 }
