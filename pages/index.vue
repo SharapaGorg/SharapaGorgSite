@@ -17,10 +17,14 @@
       <tech-logo logo-path="Nuxt_logo.svg" logo-title="Nuxt.js" href='https://nuxtjs.org/'/>
     </div>
     <div class='lg:col-start-2 lg:row-start-2'>
-      <ProjectCard project-title="SharapaGorgSite" project-lang="Vue_logo.svg" project-img="Vue_logo.svg"/>
+      <ProjectCard project-title="SharapaGorgSite"
+                   :project-lang="['Tailwind_logo.svg', 'Vue_logo.svg', 'Nuxt_logo.svg']" project-img="Vue_logo.svg"
+                   project-preview="Video1.gif"/>
     </div>
-    <div class = 'lg:col-start-3 lg:row-start-2'>
-      <ProjectCard project-title = "UploadTrackToSpotify" project-lang="Python_logo.svg" project-img="Python_logo.svg"/>
+    <div class='lg:col-start-3 lg:row-start-2'>
+      <ProjectCard project-title="UploadTrackToSpotify" :project-lang="['Python_logo.svg']"
+                   project-img="Python_logo.svg"
+                   project-preview="Video1.gif"/>
     </div>
     <div class='lg:col-start-2 lg:col-end-4 contacts lg:row-start-2' ref='contacts'>
       <contact logo-path="github.svg" href="https://github.com/SharapaGorg"/>
