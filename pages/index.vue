@@ -20,7 +20,7 @@
       <ProjectCard project-title="SharapaGorgSite" project-lang="Vue_logo.svg" project-img="Vue_logo.svg"/>
     </div>
     <div class = 'lg:col-start-3 lg:row-start-2'>
-      //
+      <ProjectCard project-title = "UploadTrackToSpotify" project-lang="Python_logo.svg" project-img="Python_logo.svg"/>
     </div>
     <div class='lg:col-start-2 lg:col-end-4 contacts lg:row-start-2' ref='contacts'>
       <contact logo-path="github.svg" href="https://github.com/SharapaGorg"/>
