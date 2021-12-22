@@ -1,16 +1,26 @@
 <template>
   <div class='grid lg:grid-cols-4 lg:grid-rows-6 justify-items-center logos'>
-    <div class="lg:col-start-2 lg:row-start-1 contact" ref="github">
-      <contact logo-path="github.svg" href="https://github.com/SharapaGorg"/>
-    </div>
-    <div class='lg:col-start-3 lg:row-start-1 contact' ref="telegram">
-      <contact logo-path="telegram.png" href="https://t.me/sharapagorg"/>
-    </div>
+<!--    <div class="lg:col-start-2 lg:row-start-1 contact" style='left : 200px;'>-->
+<!--    </div>-->
+<!--    <div class='lg:col-start-3 lg:row-start-1 contact' style='right : 200px;'>-->
+<!--    </div>-->
 
     <div class='lg:col-start-2 lg:col-end-4 lg:row-start-1 SharapaLogo' ref="SharapaLogo">
       <div class='main-logo'>
+        <span class='logo-text'>SG</span>
       </div>
-      <span class='logo-text'>SG</span>
+      <div class='grid grid-cols-2 justify-items-center contacts'>
+        <div class = 'contact' ref = 'githubContainer' style = 'transform: translateX(-180px)'>
+          <div ref="github" id='github'>
+            <contact logo-path="github.svg" href="https://github.com/SharapaGorg"/>
+          </div>
+        </div>
+        <div class = 'contact' ref = 'telegramContainer' style = 'transform: translateX(180px)'>
+          <div ref="telegram" id='telegram'>
+            <contact logo-path="telegram.png" href="https://t.me/sharapagorg"/>
+          </div>
+        </div>
+      </div>
     </div>
     <div class='lg:col-start-2 lg:col-end-4 lg:row-start-2 bio'>
 
@@ -55,7 +65,7 @@ export default {
   data() {
     return {
       navigatorActivated: false,
-      contacts: ['telegram', 'github']
+      contacts: ['github', 'telegram']
     }
   },
   components: {
@@ -64,20 +74,28 @@ export default {
     ProjectCard
   },
   methods: {
-    changeOpacity(value) {
+    activateContacts(activate) {
       setTimeout(() => {
-        for (let contact of this.contacts) {
-          this.$refs[contact].style.opacity = value
-        }
-      }, 400)
+        this.$refs.github.style.transform = !activate ? 'rotate(360deg)' : 'rotate(-360deg)'
+        this.$refs.githubContainer.style.transform = !activate ? 'translateX(0px)' : 'translateX(-180px)'
+      }, 100)
+
+      setTimeout(() => {
+        this.$refs.telegram.style.transform = !activate ? 'rotate(-360deg)' : 'rotate(360deg)'
+        this.$refs.telegramContainer.style.transform = !activate ? 'translateX(0px)' : 'translateX(180px)'
+      }, 100)
     }
   },
   mounted() {
-    this.changeOpacity('0')
+    setTimeout(() => {
+      this.activateContacts(false)
+    }, 100)
 
     this.$refs.SharapaLogo.addEventListener('click', () => {
-      this.navigatorActivated = !this.navigatorActivated;
-      this.changeOpacity(this.navigatorActivated ? '1' : '0')
+      this.navigatorActivated = !this.navigatorActivated
+
+      this.activateContacts(this.navigatorActivated);
+
     })
   }
 }
