@@ -6,7 +6,43 @@ html {
 }
 
 .logos {
-  margin-top: 100px;
+  /*margin-top: 100px;*/
+}
+
+.theme-turner {
+  height : 70px;
+  width : 70px;
+  float : right;
+  display : inline-block;
+  margin-right : 25px;
+}
+
+.flag-container {
+  height : 70px;
+  width : 70px;
+  margin-left : 25px;
+  margin-top : 25px;
+  border-radius: 100%;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  border : 2px solid rgb(238, 240, 244);
+}
+
+.flag {
+  position : relative;
+  top : 3px;
+  height : 60px;
+  width : 60px;
+  border-radius: 100%;
+  box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;
+  @apply mx-auto;
+}
+
+.flag img {
+  position : relative;
+  top : 10px;
+  height : 40px;
+  width : 40px;
+  @apply mx-auto;
 }
 
 .unselectable {
@@ -25,7 +61,7 @@ html {
   border-radius: 100%;
   overflow: hidden;
   box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;
-  @apply relative lg:bottom-2/3;
+  /*@apply relative lg:bottom-2/3;*/
 }
 
 .small-logo {
@@ -73,6 +109,10 @@ html {
   transition: all .75s linear;
 }
 
+.test {
+  margin-bottom : 50px;
+}
+
 .logo-text {
   cursor: pointer;
   position: relative;
@@ -91,9 +131,7 @@ html {
   font-size: 40px;
   color: #3A424B;
   text-align: center;
-  /*margin-top : 100px;*/
   border-radius: 20px;
-  /*box-shadow: inset 16.82px 16.82px 28px #D9DADE, inset -16.82px -16.82px 28px #FFFFFF;*/
   @apply px-4 py-2;
 }
 
@@ -108,14 +146,6 @@ html {
   position: relative;
   height: 300px;
   z-index: 100;
-}
-
-#github {
-  /*transform: translateX(-180px);*/
-}
-
-#telegram {
-  /*transform: translateX(180px);*/
 }
 
 .line {
