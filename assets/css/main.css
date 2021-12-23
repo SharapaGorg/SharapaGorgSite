@@ -18,6 +18,7 @@ html {
 }
 
 .flag-container {
+  cursor : pointer;
   height : 70px;
   width : 70px;
   margin-left : 25px;
@@ -126,20 +127,34 @@ html {
 }
 
 .tech-title {
-  display: block;
   font-family: "Ubuntu", sans-serif;
   font-size: 40px;
   color: #3A424B;
-  text-align: center;
   border-radius: 20px;
-  @apply px-4 py-2;
+  @apply px-4 py-2 block text-center
+}
+
+.bio-header {
+  font-family: "Ubuntu", sans-serif;
+  font-size : 25px;
+  color: #3A424B;
+  @apply mx-auto block;
+}
+
+.bio-description {
+  font-family: "Ubuntu", sans-serif;
+  font-size : 16px;
+  color: #3A424B;
+  display: inline-block;
+  text-indent : 1rem;
+  @apply text-justify;
 }
 
 .bio {
-  height: 300px;
-  width: 100%;
+  width: 80%;
   border-radius: 10px;
   box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  @apply px-8 py-4 text-center;
 }
 
 .SharapaLogo {
@@ -150,8 +165,7 @@ html {
 
 .line {
   height: 3px;
-  max-width: 1000px;
-  min-width: 700px;
+  min-width : 40vw;
   border-radius: 100px;
   background-color: #3A424B;
 }

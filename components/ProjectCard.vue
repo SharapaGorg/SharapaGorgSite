@@ -7,7 +7,7 @@
     </div>
     <div class='project-part-2' v-show="!showPreview">
       <span class='project-title'>{{ projectTitle }}</span>
-      <span class='tools-inscription'>Tools:</span>
+      <span class='tools-inscription'>{{ Tools }}:</span>
       <img :src='resolve_img_url(tool)' class='project-lang' v-for="tool in projectLang" :key="tool"/>
     </div>
   </div>
@@ -44,6 +44,12 @@ export default {
     this.$refs.card.addEventListener('mouseout', () => {
       this.showPreview = false;
     })
+  },
+  computed: {
+    Tools() {
+      const headers = ['Tools', 'Средства']
+      return headers[Number(this.$store.state.turner.langIsRussian)]
+    }
   }
 }
 
@@ -52,7 +58,6 @@ export default {
 <style scoped>
 
 .project-card {
-  margin-top : 50px;
   width: 300px;
   height: 230px;
   background-color: rgb(238, 240, 244);

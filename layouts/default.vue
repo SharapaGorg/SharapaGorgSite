@@ -2,12 +2,12 @@
   <div id='root'>
 <!--    <img class='theme-turner' src = '../static/moon.svg' v-show = '!nightTheme' @click = 'changeTheme'/>-->
 <!--    <img class = 'theme-turner' src ='../static/sun.svg' v-show="nightTheme" @click = 'changeTheme'/>-->
-        <div class = 'flag-container'>
+        <div class = 'flag-container' @click = 'changeLang'>
           <div class = 'flag' v-show = 'isRussian'>
-            <img src = '../static/russia.svg' @click = 'changeLang'/>
+            <img src = '../static/russia.svg'/>
           </div>
           <div class ='flag' v-show = '!isRussian'>
-            <img src = '../static/UK.svg' @click = 'changeLang'/>
+            <img src = '../static/UK.svg'/>
           </div>
         </div>
     <div>
@@ -24,16 +24,17 @@
 export default {
   data() {
     return {
-      nightTheme : false,
-      isRussian : false
+      nightTheme : this.$store.state.turner.themeIsLight,
+      isRussian : this.$store.state.turner.langIsRussian
     }
   },
   methods : {
     changeLang() {
-      this.isRussian = !this.isRussian;
+      this.$store.commit('turner/changeLang');
+      this.isRussian = this.$store.state.turner.langIsRussian
     },
     changeTheme() {
-      this.nightTheme = !this.nightTheme;
+      // this.nightTheme = !this.nightTheme;
 
       const html = document.querySelector('html')
       if (this.nightTheme) {

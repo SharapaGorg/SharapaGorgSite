@@ -5,12 +5,12 @@
         <span class='logo-text'>SG</span>
       </div>
       <div class='grid grid-cols-2 justify-items-center contacts'>
-        <div class = 'contact' ref = 'githubContainer' style = 'transform: translateX(-180px)'>
+        <div class='contact' ref='githubContainer' style='transform: translateX(-180px)'>
           <div ref="github">
             <contact logo-path="github.svg" href="https://github.com/SharapaGorg"/>
           </div>
         </div>
-        <div class = 'contact' ref = 'telegramContainer' style = 'transform: translateX(180px)'>
+        <div class='contact' ref='telegramContainer' style='transform: translateX(180px)'>
           <div ref="telegram">
             <contact logo-path="telegram.png" href="https://t.me/sharapagorg"/>
           </div>
@@ -18,10 +18,17 @@
       </div>
     </div>
     <div class='lg:col-start-2 lg:col-end-4 lg:row-start-2 bio'>
-
+      <span class='bio-header'>
+          {{ BioAndWork }}
+      </span>
+        <p class = 'bio-description'>
+          {{ BioDescription }}
+        </p>
     </div>
     <div class='lg:col-start-2 lg:col-end-4 lg:row-start-3' style='height : 100px;'>
-      <span class='tech-title'>Projects and ideas</span>
+      <span class='tech-title'>
+        {{ ProjectsAndIdeas}}
+      </span>
       <div class='line'></div>
     </div>
     <div class='lg:col-start-2 lg:row-start-4'>
@@ -35,7 +42,9 @@
                    project-preview="Video2.gif"/>
     </div>
     <div class='lg:col-start-2 lg:col-end-4 lg:row-start-5' style='height : 100px;'>
-      <span class='tech-title'>Technologies and tools</span>
+      <span class='tech-title'>
+        {{ TechnologiesAndTools }}
+      </span>
       <div class='line'></div>
     </div>
 
@@ -50,7 +59,7 @@
                class='lg:col-start-3 lg:row-start-7'/>
 
     <tech-logo logo-path="Tailwind_logo.svg" logo-title="TailwindCSS" href="https://tailwindcss.com/"
-               class='lg:col-start-2 lg:row-start-8' ></tech-logo>
+               class='lg:col-start-2 lg:row-start-8'></tech-logo>
   </div>
 </template>
 
@@ -65,7 +74,7 @@ export default {
   data() {
     return {
       navigatorActivated: false,
-      contacts: ['github', 'telegram']
+      contacts: ['github', 'telegram'],
     }
   },
   components: {
@@ -97,6 +106,26 @@ export default {
       this.activateContacts(this.navigatorActivated);
 
     })
+  },
+  computed: {
+    BioAndWork() {
+      const headers = ['Bio and work', 'О работе и жизни']
+      return headers[Number(this.$store.state.turner.langIsRussian)]
+    },
+    BioDescription() {
+      const headers = [
+        'SharapaGorg is a freelance and a front-end developer based in Moscow. He loves to solve various everyday tasks with the help of code, but his favorite pastime at the moment is the creation of different types of sites with interesting design and functionality.',
+        'SharapaGorg - фриланс и фронтенд разработчик из Москвы. Любит решать различные повседневные задачи с помощью кода, но на сегодняшний момент его любимое занятие - создание различных видов сайтов с интересным дизайном и функционалом.']
+      return headers[Number(this.$store.state.turner.langIsRussian)]
+    },
+    ProjectsAndIdeas() {
+      const headers = ['Projects and ideas', 'Проекты и идеи']
+      return headers[Number(this.$store.state.turner.langIsRussian)]
+    },
+    TechnologiesAndTools() {
+      const headers = ['Technologies and tools', 'Технологии и инструменты']
+      return headers[Number(this.$store.state.turner.langIsRussian)]
+    }
   }
 }
 </script>
