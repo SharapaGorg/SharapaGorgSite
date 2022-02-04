@@ -37,12 +37,16 @@
       <div class='lg:col-start-2 lg:row-start-3'>
         <ProjectCard project-title="SharapaGorgSite"
                      :project-lang="['Tailwind_logo.svg', 'Vue_logo.svg', 'Nuxt_logo.svg']" project-img="Vue_logo.svg"
-                     project-preview="Video1.gif"/>
+                     project-preview="Video1.gif"
+                     project-description="Personal website business card I created to show off my skills in creating beautiful websites"
+                     :links="{ Github : 'https://github.com/SharapaGorg/SharapaGorgSite' }"/>
       </div>
       <div class='lg:col-start-3 lg:row-start-3'>
         <ProjectCard project-title="UploadTracksToSpotify" :project-lang="['Python_logo.svg']"
                      project-img="Spotify_logo.svg"
-                     project-preview="Video2.gif"/>
+                     project-preview="Video2.gif"
+                     project-description="Project description"
+                     :links="{ Github : 'https://github.com/SharapaGorg/UploadTrackToSpotify', Project : '#' }"/>
       </div>
       <div class='lg:col-start-2 lg:col-end-4 lg:row-start-4' style='height : 100px;'>
       <span class='tech-title'>

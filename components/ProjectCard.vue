@@ -1,27 +1,32 @@
 <template>
   <div>
-    <div class='project-card' ref='card' @click="showProjectLinks">
-      <div class='project-preview' v-show='showPreview' ref='projectPreview'>
+    <div class='project-card' ref='card'>
+      <div class='project-preview' v-show='showPreview' ref='projectPreview' @click="showProjectLinks">
       </div>
       <div class='project-part-1' v-show="!showPreview && !showLinks" style="height : 120px">
-        <img :src='resolve_img_url(projectImg)'/>
+        <img alt="" :src='resolve_img_url(projectImg)'/>
       </div>
 
       <div class="project-part-1 project-links" v-show="showLinks">
-        Personal website business card I created to show off my skills in creating beautiful websites
+        <div style="min-height : 100px" class="inline-block">{{ projectDescription }}</div>
+
         <div class="line" style="min-width : 100%; margin-top : 10px; margin-bottom : 10px"></div>
-        Github : <a href="#"> click </a><br>
-        Project : <a href="#"> click </a>
+
+        <div style="min-height : 45px">
+          <span v-for="link in Object.keys(links)">
+            {{ link }} : <a :href="links[link]"> click </a><br>
+          </span>
+        </div>
+        <img alt="" src="../static/cross.svg" class="cross" @click="closeLinks"/>
       </div>
 
 
       <div class='project-part-2' v-show="!showPreview && !showLinks">
         <span class='project-title'>{{ projectTitle }}</span>
         <span class='tools-inscription'>{{ Tools }}:</span>
-        <img :src='resolve_img_url(tool)' class='project-lang' v-for="tool in projectLang" :key="tool"/>
+        <img alt="" :src='resolve_img_url(tool)' class='project-lang' v-for="tool in projectLang" :key="tool"/>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -39,7 +44,9 @@ export default {
     projectTitle: String,
     projectImg: String,
     projectLang: Array,
-    projectPreview: String
+    projectPreview: String,
+    projectDescription: String,
+    links: Object
   },
   methods: {
     resolve_img_url: function (path) {
@@ -47,20 +54,21 @@ export default {
       return images("./" + path)
     },
     showProjectLinks() {
-      this.showLinks = !this.showLinks;
-
-      if (this.showLinks) {
-        this.showPreview = false;
-      }
+      this.showLinks = true;
+      this.showPreview = false;
+    },
+    closeLinks() {
+      this.showLinks = false;
+      this.showPreview = true;
     }
   },
   mounted() {
     this.$refs.projectPreview.style.backgroundImage = 'url(' + this.resolve_img_url(this.projectPreview) + ')'
 
     this.$refs.card.addEventListener('mouseover', () => {
-        if (!this.showLinks) {
-          this.showPreview = true;
-        }
+      if (!this.showLinks) {
+        this.showPreview = true;
+      }
     })
 
     this.$refs.card.addEventListener('mouseout', () => {
@@ -83,6 +91,17 @@ a {
   text-decoration: underline;
 }
 
+a:hover {
+  color: #1240da;
+}
+
+.cross {
+  height: 35px !important;
+  width: 15px;
+  margin-top: -15px;
+  @apply mx-auto cursor-pointer;
+}
+
 .project-card {
   width: 300px;
   min-height: 230px;
@@ -90,16 +109,15 @@ a {
   border-radius: 20px;
   box-shadow: 9.91px 9.91px 15px #CDCED2, -9.91px -9.91px 15px #FFFFFF;
   border: 10px solid rgb(238, 240, 244);
-  cursor: pointer;
 }
 
 .project-links {
   width: 275px;
-  margin-left : auto;
-  margin-right : auto;
-  padding : 10px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 10px;
   font-family: "Ubuntu", sans-serif;
-  text-align : justify;
+  text-align: justify;
   box-shadow: none !important;
 }
 
@@ -111,6 +129,7 @@ a {
   height: 170px;
   border-radius: 20px;
   background-position: center;
+  cursor: pointer;
 }
 
 
