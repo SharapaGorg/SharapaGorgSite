@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class = 'grid grid-cols-4 justify-items-center'>
+    <div class='grid lg:grid-cols-4 justify-items-center'>
       <div class='lg:col-start-2 lg:col-end-4 SharapaLogo' ref="SharapaLogo">
         <div class='main-logo'>
           <span class='logo-text'>SG</span>
@@ -35,20 +35,20 @@
         <div class='line'></div>
       </div>
       <div class='lg:col-start-2 lg:row-start-3'>
-        <ProjectCard project-title="SharapaGorgSite"
+        <project-card project-title="SharapaGorgSite"
                      :project-lang="['Tailwind_logo.svg', 'Vue_logo.svg', 'Nuxt_logo.svg']" project-img="Vue_logo.svg"
                      project-preview="Video1.gif"
                      project-description="Personal website business card I created to show off my skills in creating beautiful websites"
                      :links="{ Github : 'https://github.com/SharapaGorg/SharapaGorgSite' }"/>
       </div>
       <div class='lg:col-start-3 lg:row-start-3'>
-        <ProjectCard project-title="UploadTracksToSpotify" :project-lang="['Python_logo.svg']"
+        <project-card project-title="UploadTracksToSpotify" :project-lang="['Python_logo.svg']"
                      project-img="Spotify_logo.svg"
                      project-preview="Video2.gif"
-                     project-description="Project description"
-                     :links="{ Github : 'https://github.com/SharapaGorg/UploadTrackToSpotify', Project : '#' }"/>
+                     project-description="Uploading tracks from vk to spotify playlist"
+                     :links="{ Github : 'https://github.com/SharapaGorg/UploadTrackToSpotify' }"/>
       </div>
-      <div class='lg:col-start-2 lg:col-end-4 lg:row-start-4' style='height : 100px;'>
+      <div class='lg:col-start-2 lg:col-end-4 lg:row-start-4' style='height : 100px; margin-bottom : 30px'>
       <span class='tech-title'>
         {{ TechnologiesAndTools }}
       </span>
@@ -67,15 +67,13 @@
 
       <tech-logo logo-path="Tailwind_logo.svg" logo-title="TailwindCSS" href="https://tailwindcss.com/"
                  class='lg:col-start-2 lg:row-start-7'></tech-logo>
+      <tech-logo logo-path="Node_logo.svg" logo-title="NodeJS" href="https://nodejs.org/en/"
+                 class="lg:col-start-3 lg:row-start-7"></tech-logo>
     </div>
   </div>
 </template>
 
 <script>
-
-import Contact from "@/components/Contact";
-import techLogo from "@/components/TechLogo";
-import ProjectCard from "@/components/ProjectCard";
 
 export default {
   name: 'IndexPage',
@@ -84,11 +82,6 @@ export default {
       navigatorActivated: false,
       contacts: ['github', 'telegram'],
     }
-  },
-  components: {
-    techLogo,
-    Contact,
-    ProjectCard
   },
   methods: {
     activateContacts(activate) {
@@ -101,10 +94,6 @@ export default {
         this.$refs.telegram.style.transform = !activate ? 'rotate(-360deg)' : 'rotate(360deg)'
         this.$refs.telegramContainer.style.transform = !activate ? 'translateX(0px)' : 'translateX(180px)'
       }, 100)
-    },
-    changeContext() {
-      let root = this.$refs.root;
-        root.style.width = '0px'
     }
   },
   mounted() {
@@ -118,14 +107,6 @@ export default {
       this.activateContacts(this.navigatorActivated);
 
     })
-    // let root = this.$refs.root
-    //
-    // setTimeout(() => {
-    //   root.style.width = '0px'
-    // }, 25)
-    // setTimeout(() => {
-    //   root.style.width = '100%'
-    // }, 425)
   },
   computed: {
     BioAndWork() {

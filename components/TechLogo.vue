@@ -1,6 +1,6 @@
 <template>
     <div class = 'logo-container' ref = 'logo'>
-      <img :src="resolve_img_url(logoPath)" class = 'small-logo'/>
+      <img :src="resolve_img_url(logoPath)" class = 'small-logo' alt=""/>
       <div class = 'tech-title_'>{{ logoTitle }}</div>
     </div>
 </template>
