@@ -1,7 +1,7 @@
 <template>
   <table class='navigator-item' ref="contact">
     <td style = 'vertical-align: middle'>
-      <img :src = 'resolve_img_url(logoPath)' class='contact-image' width=50 height=50/>
+      <img :src = 'resolve_img_url(logoPath)' class='contact-image'  width=50 height=50/>
     </td>
   </table>
 </template>

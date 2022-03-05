@@ -2,11 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500;600&family=Ubuntu:wght@500&family=Yuji+Hentaigana+Akebono&display=swap');
 
 html {
-  background-color: rgb(238, 240, 244);
+  /*background-color: rgb(238, 240, 244);*/
+}
+
+* {
+  transition: all .75s ease;
 }
 
 .content {
   overflow-x: hidden;
+  transition: none;
   /*margin-top: 100px;*/
 }
 
@@ -25,8 +30,9 @@ html {
   margin-left : 25px;
   margin-top : 25px;
   border-radius: 100%;
-  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
-  border : 2px solid rgb(238, 240, 244);
+  /*box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;*/
+  /*border : 2px solid rgb(238, 240, 244);*/
+  border : 2px solid transparent;
 }
 
 .flag {
@@ -35,7 +41,7 @@ html {
   height : 60px;
   width : 60px;
   border-radius: 100%;
-  box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;
+  /*box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;*/
   @apply mx-auto;
 }
 
@@ -62,7 +68,7 @@ html {
   height: 250px;
   border-radius: 100%;
   overflow: hidden;
-  box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;
+  /*box-shadow: inset 9.91px 9.91px 15px #D9DADE, inset -9.91px -9.91px 15px #FFFFFF;*/
   /*@apply relative lg:bottom-2/3;*/
 }
 
@@ -75,21 +81,19 @@ html {
 }
 
 .main-logo {
-  width: 256px;
-  height: 256px;
   z-index: 105;
   border-radius: 100%;
-  transition : all .8s linear;
+  transition : all .8s ease;
   background-color: rgb(238, 240, 244);
 
-  @apply relative cursor-pointer;
+  @apply relative cursor-pointer w-[256px] h-[256px];
 }
 
 .navigator-item {
   cursor: pointer;
   height: 100px;
   width: 100px;
-  background-color: rgb(238, 240, 244);
+  /*background-color: rgb(238, 240, 244);*/
   border-radius: 50%;
   /*box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;*/
 }
@@ -99,7 +103,7 @@ html {
 }
 
 .contact {
-  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  /*box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;*/
   border-radius: 100%;
   transition: all .75s linear;
   position: relative;
@@ -155,7 +159,7 @@ html {
   margin-top : 30px;
   width: 80%;
   border-radius: 10px;
-  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  /*box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;*/
   @apply px-8 py-4 text-center;
 }
 
@@ -164,7 +168,7 @@ html {
   height: 256px;
   z-index: 100;
   border-radius: 100%;
-  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  /*box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;*/
 }
 
 .line {

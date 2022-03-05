@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class='project-card' ref='card'>
+    <div class='project-card' ref='card' :style="ThemeStyle">
       <div class='project-preview' v-show='showPreview' ref='projectPreview' @click="showProjectLinks">
       </div>
-      <div class='project-part-1' v-show="!showPreview && !showLinks" style="height : 120px">
+      <div class='project-part-1' v-show="!showPreview && !showLinks" :style="ThemeStyleInset">
         <img alt="" :src='resolve_img_url(projectImg)'/>
       </div>
 
@@ -23,7 +23,7 @@
 
       <div class='project-part-2' v-show="!showPreview && !showLinks">
         <span class='project-title'>{{ projectTitle }}</span>
-        <span class='tools-inscription'>{{ Tools }}:</span>
+        <span class='tools-inscription' :style="ThemeStyleInset">{{ Tools }}:</span>
         <img alt="" :src='resolve_img_url(tool)' class='project-lang' v-for="tool in projectLang" :key="tool"/>
       </div>
     </div>
@@ -62,6 +62,45 @@ export default {
       this.showPreview = true;
     }
   },
+  computed: {
+    // why I should do it???
+    // I can not use arguments in computed functions, so
+    // I had to duplicate functions....
+    ThemeStyleInset: function() {
+      if (this.$store.state.turner.themeIsLight) {
+        return {
+          backgroundColor: this.$store.state.lightBackground,
+          borderColor : this.$store.state.lightBackground,
+          boxShadow: this.$store.state.lightInsetShadow
+        }
+      } else {
+        return {
+          backgroundColor: this.$store.state.darkBackground,
+          borderColor : this.$store.state.darkBackground,
+          boxShadow:  this.$store.state.darkInsetShadow
+        }
+      }
+    },
+    ThemeStyle: function() {
+      if (this.$store.state.turner.themeIsLight) {
+        return {
+          backgroundColor: this.$store.state.lightBackground,
+          borderColor : this.$store.state.lightBackground,
+          boxShadow: this.$store.state.lightShadow
+        }
+      } else {
+        return {
+          backgroundColor: this.$store.state.darkBackground,
+          borderColor : this.$store.state.darkBackground,
+          boxShadow: this.$store.state.darkShadow
+        }
+      }
+    },
+    Tools() {
+      const headers = ['Tools', 'Средства']
+      return headers[Number(this.$store.state.turner.langIsRussian)]
+    }
+  },
   mounted() {
     this.$refs.projectPreview.style.backgroundImage = 'url(' + this.resolve_img_url(this.projectPreview) + ')'
 
@@ -74,12 +113,6 @@ export default {
     this.$refs.card.addEventListener('mouseout', () => {
       this.showPreview = false;
     })
-  },
-  computed: {
-    Tools() {
-      const headers = ['Tools', 'Средства']
-      return headers[Number(this.$store.state.turner.langIsRussian)]
-    }
   }
 }
 
@@ -107,7 +140,7 @@ a:hover {
   min-height: 230px;
   background-color: rgb(238, 240, 244);
   border-radius: 20px;
-  box-shadow: 9.91px 9.91px 15px #CDCED2, -9.91px -9.91px 15px #FFFFFF;
+  /*box-shadow: 9.91px 9.91px 15px #CDCED2, -9.91px -9.91px 15px #FFFFFF;*/
   border: 10px solid rgb(238, 240, 244);
 }
 
@@ -145,6 +178,7 @@ a:hover {
 .project-part-1 {
   border-radius: 20px;
   box-shadow: inset 16.82px 16.82px 28px #D9DADE, inset -16.82px -16.82px 28px #FFFFFF;
+  @apply h-[120px];
 }
 
 .project-part-2 {

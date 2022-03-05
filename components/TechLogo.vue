@@ -1,5 +1,5 @@
 <template>
-    <div class = 'logo-container' ref = 'logo'>
+    <div class = 'logo-container' ref = 'logo' :style="ThemeStyle">
       <img :src="resolve_img_url(logoPath)" class = 'small-logo' alt=""/>
       <div class = 'tech-title_'>{{ logoTitle }}</div>
     </div>
@@ -20,6 +20,21 @@ export default {
       this.$refs.logo.addEventListener('click', () => {
         location.href = this.href
       })
+  },
+  computed: {
+    ThemeStyle() {
+      if (this.$store.state.turner.themeIsLight) {
+        return {
+          backgroundColor: this.$store.state.lightBackground,
+          boxShadow: this.$store.state.lightInsetShadow
+        }
+      } else {
+        return {
+          backgroundColor: this.$store.state.darkBackground,
+          boxShadow: this.$store.state.darkInsetShadow
+        }
+      }
+    }
   }
 }
 

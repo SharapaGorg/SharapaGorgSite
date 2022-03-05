@@ -1,8 +1,8 @@
 <template>
-  <div style="overflow : hidden">
-    <!--    <img class='theme-turner' src = '../static/moon.svg' v-show = '!nightTheme' @click = 'changeTheme'/>-->
-    <!--    <img class = 'theme-turner' src ='../static/sun.svg' v-show="nightTheme" @click = 'changeTheme'/>-->
-    <div class='flag-container' @click='changeLang'>
+  <div class="overflow-hidden"  :style="ThemeStyle">
+        <img class='theme-turner' src = '../static/moon.svg' v-show = '!nightTheme' @click = 'changeTheme'/>
+        <img class = 'theme-turner' src ='../static/sun.svg' v-show="nightTheme" @click = 'changeTheme'/>
+    <div class='flag-container' @click='changeLang' :style="ThemeStyle">
       <div class='flag' v-show='isRussian'>
         <img src='../static/russia.svg'/>
       </div>
@@ -32,7 +32,6 @@
       </span>
     </footer>
   </div>
-
 </template>
 
 <style>
@@ -58,12 +57,28 @@ export default {
       rotateStep: 0
     }
   },
+  computed: {
+    ThemeStyle() {
+      if (this.$store.state.turner.themeIsLight) {
+        return {
+          backgroundColor: this.$store.state.lightBackground,
+          boxShadow: this.$store.state.lightShadow
+        }
+      } else {
+        return {
+          backgroundColor: this.$store.state.darkBackground,
+          boxShadow: this.$store.state.darkShadow
+        }
+      }
+    }
+  },
   methods: {
     changeLang() {
       const content = this.$refs.root.querySelector('.content')
       const SharapaLogo = this.$refs.root.querySelector('.main-logo')
 
       SharapaLogo.style.transform = `rotate(${this.rotateStep + 360}deg)`
+
       content.style.width = '0px'
       this.rotateStep += 360
 
@@ -77,15 +92,7 @@ export default {
 
     },
     changeTheme() {
-      // this.nightTheme = !this.nightTheme;
-
-      const html = document.querySelector('html')
-      if (this.nightTheme) {
-        html.style.backgroundColor = '#3A424B'
-      } else {
-        console.log(1)
-        html.style.backgroundColor = 'rgb(238, 240, 244)'
-      }
+        this.$store.commit('turner/changeTheme')
     }
   }
 }
